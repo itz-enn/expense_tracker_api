@@ -3,6 +3,8 @@ import * as dotenv from "dotenv";
 import bodyParser from "body-parser";
 import cors from "cors";
 import { authRoutes } from "./routes/auth.route";
+import pool, {checkDbConnection} from "./config/db.config";
+checkDbConnection(pool);
 
 const app = express();
 dotenv.config();
